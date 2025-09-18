@@ -1,6 +1,6 @@
 # The kernel booting sequence
 ## 1. Kernel starts up 
-Boot ROM → entry.S → start.c → main.c → subsystem init → userinit() → scheduler()
+Boot ROM → entry.S → start.c → main.c → subsystem init → userinit() → [scheduler()](https://github.com/youya199/xv6-riscv/blob/riscv/kernel/proc.c#L422)
 
 Inside main.c, after initializing subsystems, xv6 calls userinit().
 ## 2. userinit() (in [proc.c](https://github.com/youya199/xv6-riscv/blob/riscv/kernel/proc.c#L220))
