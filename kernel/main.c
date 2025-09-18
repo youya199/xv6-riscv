@@ -10,7 +10,7 @@ volatile static int started = 0;
 void
 main()
 {
-  if(cpuid() == 0){
+  if(cpuid() == 0){//only let one hart do the inits, other harts wait for it to finish, then each hart calls its scheduler to register
     consoleinit();
     printfinit();
     printf("\n");
