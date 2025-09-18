@@ -170,8 +170,8 @@ main(void)
         fprintf(2, "cannot cd %s\n", cmd+3);
     } else {
       if(fork1() == 0)
-        runcmd(parsecmd(cmd));
-      wait(0);
+        runcmd(parsecmd(cmd));//child ist beauftragt diesen cmd zu machen
+      wait(0);//parent wartet auf child
     }
   }
   exit(0);
