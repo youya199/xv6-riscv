@@ -10,7 +10,8 @@ This function creates the very first user process:
     - Sets up a trapframe (registers for entering user mode).
     - sets /init as the content binary of the first process
 - Marks it as RUNNABLE.
-### 2.2.  /init
+### 2.2. where is /init from
+It is in [/user/init.c](https://github.com/youya199/xv6-riscv/blob/riscv/user/init.c#L15)
 ~~~
 ### 2.4. /sh (the shell)
 Now we’re at sh.c (the source for /sh).
