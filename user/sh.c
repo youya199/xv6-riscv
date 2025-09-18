@@ -174,7 +174,7 @@ main(void)
       wait(0);//parent wartet auf child
     }
   }
-  exit(0);
+  exit(0);//this exit function would manage the scheduler context and etc
 }
 
 void
