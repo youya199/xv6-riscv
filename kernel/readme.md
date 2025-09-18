@@ -11,9 +11,11 @@ This function creates the very first user process:
     - sets /init as the content binary of the first process
 - Marks it as RUNNABLE.
 ### 2.2. where is /init from
-It is in [/user/init.c](https://github.com/youya199/xv6-riscv/blob/riscv/user/init.c#L15)
-~~~
-### 2.4. /sh (the shell)
+It is in [/user/init.c](https://github.com/youya199/xv6-riscv/blob/riscv/user/init.c#L15). Here we did:
+
+$exec("sh", argv);$
+
+### 2.3. /sh (the shell)
 Now we’re at sh.c (the source for /sh).
 This is the program you interact with — the prompt you see in QEMU.
 It waits for you to type commands.
@@ -22,4 +24,4 @@ For each command:
 - Child calls exec(command, argv).
 - Parent waits.
 So every command you type spawns a new process.
-### (2.5. hands over to scheduler)
+### (2.4. hands over to scheduler)
