@@ -31,7 +31,7 @@ main(void)
       exit(1);
     }
     if(pid == 0){
-      exec("sh", argv);
+      exec("sh", argv);// here we boot into the shell terminal of xv6
       printf("init: exec sh failed\n");
       exit(1);
     }
