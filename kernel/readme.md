@@ -2,7 +2,7 @@
 ## 1. Kernel starts up 
 Boot ROM → entry.S → start.c → main.c → subsystem init → userinit() → scheduler()
 In main.c, after initializing subsystems, xv6 calls userinit().
-## 2. userinit() (in proc.c)
+## 2. userinit() (in [proc.c](https://github.com/youya199/xv6-riscv/blob/riscv/kernel/proc.c#L220))
 This function creates the very first user process:
 - Allocates a process slot in proc[].(the global process list)
 - Sets up a trapframe (registers for entering user mode).
