@@ -7,29 +7,10 @@ Inside main.c, after initializing subsystems, xv6 calls userinit().
 ### 2.1. userinit() (in [proc.c](https://github.com/youya199/xv6-riscv/blob/riscv/kernel/proc.c#L220))
 This function creates the very first user process:
 - Allocates a process slot in proc[].(the global process list)
-- Sets up a trapframe (registers for entering user mode).
-- Loads a tiny program initcode.S into its memory.
+    - Sets up a trapframe (registers for entering user mode).
+    - sets /init as the content binary of the first process
 - Marks it as RUNNABLE.
-### 2.2. initcode.S (the tiny bootstrap user program)
-This is not the shell yet!
-initcode.S is only a few instructions long.
-Its job:
-- Call the exec() system call with arguments "init".
-- This tells the kernel: “replace me with the real /init program.”
-So the very first process doesn’t run shell — it runs initcode, which immediately transforms into /init.
-### 2.3. /init (the real first user program)
-The file init.c (compiled into the xv6 file system as /init) is the first true user program.
-It does some setup:
-- Opens the console device.
-- Duplicates file descriptors (so stdin/out/err point to console).
-Then enters a loop:
-~~~
-for(;;){
-    if(fork() == 0){
-        exec("sh", argv);  // child runs /sh
-    }
-    wait(0);  // parent waits until child (the shell) exits
-}
+### 2.2.  /init
 ~~~
 ### 2.4. /sh (the shell)
 Now we’re at sh.c (the source for /sh).
