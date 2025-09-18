@@ -14,8 +14,11 @@ This function creates the very first user process:
 It is in [/user/init.c](https://github.com/youya199/xv6-riscv/blob/riscv/user/init.c#L15). Here we did:
 
 $exec("sh", argv);$
+### 2.3. Go in scheduler()
+Scheduler finds out the runnable process, which is /init, then it runs that, and it turns to shell with exec.
 
-### 2.3. /sh (the shell)
+At last maybe shell waits for your input, this waiting gives control back to scheduler.
+### 2.4. /sh (the shell)
 Now we’re at sh.c (the source for /sh).
 This is the program you interact with — the prompt you see in QEMU.
 It waits for you to type commands.
