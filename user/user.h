@@ -41,7 +41,7 @@ char* sbrk(int);
 char* sbrklazy(int);
 
 // printf.c
-void fprintf(int, const char*, ...) __attribute__ ((format (printf, 2, 3)));
+void fprintf(int, const char*, ...) __attribute__ ((format (printf, 2, 3)));//= “Hey compiler, treat this like printf: second argument = format, third = values to fill in.”
 void printf(const char*, ...) __attribute__ ((format (printf, 1, 2)));
 
 // umalloc.c
