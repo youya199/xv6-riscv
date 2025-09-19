@@ -129,7 +129,7 @@ static uint64 (*syscalls[])(void) = { //order-number is written in [], easier to
 }; //this "[order-number] element" mode is called "designated initializer", it's a C99 feature
 
 void
-syscall(void)
+syscall(void)//this kernel function looks at the a7 register (syscall number from user mode) and calls the right sys_* function
 {
   int num;
   struct proc *p = myproc();
