@@ -4,9 +4,9 @@
 #    One example of usys.S:
 #      .global fork
 #      fork:
-#      li a7, SYS_fork
-#      ecall
-#      ret
+#      li a7, SYS_fork //load immediate number to a7
+#      ecall            //trap into supervisor mode, the trap handler will cope with context saving and args passing, refer to RISCV syscall ABI
+#      ret               //go back to where fork() was called in user app
 # 2. How it works with user src(e.g. "cat")
 #    2.1 generate usys.S at compiling time
 #    2.2 compile cat.c to cat.o; compile usys.S to usys.o. 
