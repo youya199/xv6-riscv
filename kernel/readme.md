@@ -52,7 +52,7 @@ static uint64 (*syscalls[])(void) = {
 [SYS_dup]    sys_dup,
 [SYS_getpid] sys_getpid,
 [SYS_sbrk]   sys_sbrk,
-[SYS_sleep]  sys_sleep,
+[SYS_pause]  sys_pause,//(former sys_sleep)
 [SYS_uptime] sys_uptime,
 [SYS_open]   sys_open,
 [SYS_write]  sys_write,
@@ -72,7 +72,7 @@ static uint64 (*syscalls[])(void) = {
 - sys_kill → calls kill()
 - sys_getpid → returns current process’s PID
 - sys_sbrk → grows process memory
-- sys_sleep → sleep for N ticks
+- sys_pause → pause for N ticks
 - sys_uptime → return system uptime in ticks
 2. kernel/sysfile.c **(file system & I/O)**
 - sys_pipe → create a pipe
