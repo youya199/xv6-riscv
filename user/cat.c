@@ -22,7 +22,7 @@ cat(int fd)
 }
 
 int
-main(int argc, char *argv[])
+main(int argc, char *argv[])//from shell we got these two argc and argv[], first one is count of args, second one is the actual args
 {
   int fd, i;
 
