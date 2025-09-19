@@ -126,7 +126,7 @@ static uint64 (*syscalls[])(void) = { //order-number is written in [], easier to
 [SYS_link]    sys_link,
 [SYS_mkdir]   sys_mkdir,
 [SYS_close]   sys_close,
-};
+}; //this "[order-number] element" mode is called "designated initializer", it's a C99 feature
 
 void
 syscall(void)
