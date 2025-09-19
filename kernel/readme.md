@@ -96,4 +96,16 @@ int exit(int);
 int wait(int*);
 ...
 ~~~
-These are thin wrappers around the ecall instruction, implemented in user/usys.pl → user/usys.S
+These are thin wrappers around the ecall instruction, implemented in user/usys.pl → user/usys.S. 
+
+They just:
+- Loads syscall number into a7
+- Executes ecall
+For example from usys.S:
+~~~
+.global fork
+fork:
+ li a7, SYS_fork
+ ecall
+ ret
+~~~
