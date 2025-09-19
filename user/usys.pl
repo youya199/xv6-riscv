@@ -1,5 +1,5 @@
 #!/usr/bin/perl -w
-# this pearl script is used to generate usys.S at compile time
+# this pearl script is used to generate usys.S at compile time, then usys.S is linked by the linker to the final ELF
 #   One example of usys.S:
 #      .global fork
 #      fork:
